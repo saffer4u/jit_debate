@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.softkru.jit_databse">
    <application
-        android:label="jit_debate"
+        android:label="Debaters"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

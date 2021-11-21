@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:jit_debate/constents/colors.dart';
 
-class CustomGradientButton extends StatelessWidget {
+class ParticipantButton extends StatelessWidget {
   final String btnTxt1;
   final String btnTxt2;
-  final String imagePath;
+  final String counter;
+
   final void Function()? onTap;
 
-  CustomGradientButton({
+  ParticipantButton({
     required this.btnTxt1,
     required this.btnTxt2,
-    required this.imagePath,
-    this.onTap,
+    required this.onTap,
+    required this.counter,
     Key? key,
   }) : super(key: key);
 
@@ -38,31 +39,39 @@ class CustomGradientButton extends StatelessWidget {
         ),
         child: Container(
           width: double.infinity,
-          height: 150,
+          height: 250,
           alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                child: Image.asset(imagePath),
-              ),
-              Text(
-                btnTxt1,
-                style: TextStyle(
-                  color: textColor,
-                  fontFamily: 'Cubano',
-                  fontSize: 30,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 26.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  counter,
+                  style: TextStyle(
+                    color: textColor,
+                    fontFamily: 'Cubano',
+                    fontSize: 110,
+                  ),
                 ),
-              ),
-              Text(
-                btnTxt2,
-                style: TextStyle(
-                  color: textColor,
-                  fontFamily: 'Cubano',
-                  fontSize: 20,
+                Text(
+                  btnTxt1,
+                  style: TextStyle(
+                    color: textColor,
+                    fontFamily: 'Cubano',
+                    fontSize: 30,
+                  ),
                 ),
-              ),
-            ],
+                Text(
+                  btnTxt2,
+                  style: TextStyle(
+                    color: textColor,
+                    fontFamily: 'Cubano',
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
