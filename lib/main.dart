@@ -1,6 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:jit_debate/constents/colors.dart';
+import 'package:jit_debate/screens/admin/admin_screen.dart';
+import 'package:jit_debate/screens/admin/wrapper.dart';
+import 'package:jit_debate/screens/all_approval.dart';
 import 'package:jit_debate/screens/home_screen.dart';
+import 'package:jit_debate/screens/login_screen.dart';
 
 import 'screens/registration_screeen.dart';
 
@@ -16,10 +21,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.pink,
+      ),
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
         'regscreen': (context) => RegistraionScreeen(),
+        'loginscreen': (context) => LogInScreen(),
+        'adminscreen': (context) => AdminScreen(),
+        'allapproval': (context) => AllApproval(),
+        'wrapper': (context) => Wrapper(),
       },
     );
   }
