@@ -80,7 +80,7 @@ class _AllApprovalState extends State<AllApproval> {
                                       "${data['name']}",
                                       style: cardTextStyle(
                                           fntSize: 20,
-                                          clr: Colors.white,
+                                          clr: HexColor('ffffcc'),
                                           fntFmly: 'Cubano',
                                           fntWt: FontWeight.normal),
                                     ),

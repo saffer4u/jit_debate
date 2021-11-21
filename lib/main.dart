@@ -6,6 +6,8 @@ import 'package:jit_debate/screens/admin/wrapper.dart';
 import 'package:jit_debate/screens/all_approval.dart';
 import 'package:jit_debate/screens/home_screen.dart';
 import 'package:jit_debate/screens/login_screen.dart';
+import 'package:jit_debate/services/auth_service.dart';
+import 'package:provider/provider.dart';
 
 import 'screens/registration_screeen.dart';
 
@@ -20,20 +22,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
+    return MultiProvider(
+      providers: [
+        Provider<AuthService>(
+          create: (_) => AuthService(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.pink,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => HomeScreen(),
+          'regscreen': (context) => RegistraionScreeen(),
+          'loginscreen': (context) => LogInScreen(),
+          'adminscreen': (context) => AdminScreen(),
+          'allapproval': (context) => AllApproval(),
+          'wrapper': (context) => Wrapper(),
+        },
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-        'regscreen': (context) => RegistraionScreeen(),
-        'loginscreen': (context) => LogInScreen(),
-        'adminscreen': (context) => AdminScreen(),
-        'allapproval': (context) => AllApproval(),
-        'wrapper': (context) => Wrapper(),
-      },
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:hexcolor/hexcolor.dart';
 import 'package:jit_debate/constents/colors.dart';
+import 'package:jit_debate/widgets/custom_grad_title.dart';
 import 'package:jit_debate/widgets/image_button_custom.dart';
 
 class Approval extends StatefulWidget {

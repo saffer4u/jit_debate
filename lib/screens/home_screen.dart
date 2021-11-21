@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                         child: CustomGradientButton(
                       onTap: () {
-                        Navigator.of(context).pushNamed('loginscreen');
+                        Navigator.of(context).pushNamed('wrapper');
                       },
                       imagePath: 'icons/adminicon.png',
                       btnTxt1: 'ADMIN',
@@ -96,10 +96,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 'From',
                 style: TextStyle(
                   color: Colors.black45,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Text('SoftKru',
                   style: TextStyle(
+                      fontSize: 18,
                       fontFamily: 'Cubano',
                       foreground: Paint()..shader = linearGradient)),
             ],

@@ -34,44 +34,44 @@ class _AdminScreenState extends State<AdminScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      // floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
-      // floatingActionButton: FloatingActionButton(
-      //     backgroundColor: Colors.black87,
-      //     elevation: 8,
-      //     onPressed: () {
-      //       showDialog(
-      //           context: context,
-      //           builder: (ctx) {
-      //             return AlertDialog(
-      //               backgroundColor: bgColor,
-      //               shape: RoundedRectangleBorder(
-      //                   borderRadius: BorderRadius.circular(12)),
-      //               title: Text("Log Out ?"),
-      //               actions: [
-      //                 TextButton(
-      //                   onPressed: () {
-      //                     Navigator.of(context).pop();
-      //                   },
-      //                   child: Text(
-      //                     'Cancel',
-      //                   ),
-      //                 ),
-      //                 TextButton(
-      //                   onPressed: () {
-      //                     FirebaseAuth.instance.signOut();
-      //                     Navigator.popUntil(context, ModalRoute.withName('/'));
-      //                   },
-      //                   child: Text(
-      //                     'Yes',
-      //                   ),
-      //                 ),
-      //               ],
-      //             );
-      //           });
-      //     },
-      //     child: Icon(
-      //       Icons.logout,
-      //     )),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.black87,
+          elevation: 8,
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (ctx) {
+                  return AlertDialog(
+                    backgroundColor: bgColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    title: Text("Log Out ?"),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          'Cancel',
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          FirebaseAuth.instance.signOut();
+                          Navigator.popUntil(context, ModalRoute.withName('/'));
+                        },
+                        child: Text(
+                          'Yes',
+                        ),
+                      ),
+                    ],
+                  );
+                });
+          },
+          child: Icon(
+            Icons.logout,
+          )),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _pageIndex,
         onTap: onTabTapped,
